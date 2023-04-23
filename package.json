@@ -8,11 +8,15 @@
     "pre": "echo \">>>>>>  running pre ...\" && npm-run-all --serial pre:preA pre:preB",
     "pre:preA": "echo \">>>>>>  running pre:preA ...\" && exit 0",
     "pre:preB": "echo \">>>>>>  running pre:preB ...\" && exit 0",
-    "build": "echo \">>>>>>  running build ...\" && npm-run-all --serial pre build:*",
+    "build": "echo \">>>>>>  running build ...\" && npm-run-all build:*",
     "prebuild:modA": "npm run pre:preA",
     "build:modA": "echo \">>>>>>  running build:modA ...\" && exit 0",
     "prebuild:modB": "npm run pre:preB",
-    "build:modB": "echo \">>>>>>  running build:modB ...\" && exit 0"
+    "build:modB": "echo \">>>>>>  running build:modB ...\" && exit 0",
+    "prebuild:modC": "npm run pre:preA",
+    "build:modC": "echo \">>>>>>  running build:modC ...\" && exit 0",
+    "prebuild:modD": "npm run pre:preA & npm run pre:preB",
+    "build:modD": "echo \">>>>>>  running build:modD ...\" && exit 0"
   },
   "repository": {
     "type": "git",
