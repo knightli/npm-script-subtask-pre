@@ -1,0 +1,23 @@
+{
+  "name": "npm-script-subtask-pre",
+  "version": "1.0.0",
+  "description": "a repo to show question: how to organize npm script subtask and pre script",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knightli/npm-script-subtask-pre.git"
+  },
+  "keywords": [
+    "npm-script",
+    "pre-script"
+  ],
+  "author": "knightli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/knightli/npm-script-subtask-pre/issues"
+  },
+  "homepage": "https://github.com/knightli/npm-script-subtask-pre#readme"
+}
