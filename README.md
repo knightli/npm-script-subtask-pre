@@ -1,6 +1,6 @@
 # How to organize npm script subtask with pre script
 
-## the first config
+## my first npm scripts
 
 package.json
 
@@ -140,6 +140,6 @@ run build:modA
 
 # before run build:modB
 # also how to skip pre:preB
-rujn build:modB
+run build:modB
 
 ```
