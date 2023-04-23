@@ -156,10 +156,10 @@ The situation becomes more complicated: subtask is more, and prepare task is cro
 
 this is a example:
 
-modA needs preA
-modB needs preB
-modC needs preA also
-modD needs preA and preB
+modA needs preA  
+modB needs preB  
+modC needs preA also  
+modD needs preA and preB  
 
 ```
 {
