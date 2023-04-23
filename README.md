@@ -143,3 +143,39 @@ run build:modA
 run build:modB
 
 ```
+
+is there a way to organize my subtask, in a graceful style ?
+
+## Addition
+
+IF we delte top build's pre script, It goes well. 
+
+BUT....IF... 
+
+The situation becomes more complicated: subtask is more, and prepare task is cross-over, there will be also duplicated pre task run without necessity
+
+this is a example:
+
+modA needs preA
+modB needs preB
+modC needs preA also
+modD needs preA and preB
+
+```
+{
+  "script": {
+    "pre": "echo \">>>>>>  running pre ...\" && npm-run-all --serial pre:preA pre:preB",
+    "pre:preA": "echo \">>>>>>  running pre:preA ...\" && exit 0",
+    "pre:preB": "echo \">>>>>>  running pre:preB ...\" && exit 0",
+    "build": "echo \">>>>>>  running build ...\" && npm run build:*",
+    "prebuild:modA": "npm run pre:preA",
+    "build:modA": "echo \">>>>>>  running build:modA ...\" && exit 0",
+    "prebuild:modB": "npm run pre:preB",
+    "build:modB": "echo \">>>>>>  running build:modB ...\" && exit 0",
+    "prebuild:modC": "npm run pre:preA",
+    "build:modC": "echo \">>>>>>  running build:modC ...\" && exit 0",
+    "prebuild:modD": "npm run pre:preA & npm run pre:preB",
+    "build:modD": "echo \">>>>>>  running build:modD ...\" && exit 0",
+  }
+}
+```
